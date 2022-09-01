@@ -1,0 +1,10 @@
+package com.studentmanagement.controller;
+
+public class AdminController {
+	
+	@RequestMapping("/adminIndex")
+	public String adminIndex()
+	{
+		return "adminHome";
+	}
+}

@@ -1,0 +1,17 @@
+package com.studentmanagement.model;
+
+import javax.annotation.Generated;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class LoginModel {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	@Column(unique = true, nullable = false)
+	private String username;
+	private String password;
+}

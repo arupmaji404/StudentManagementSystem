@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="navbar :: navbar">  </div>
+	<h1>This is admin home page</h1>
+	
+	<a href="/admin-control">Admin Control</a>
+	<a href="/teacher-control">Teacher Control</a>
+	<a href="/student-control">Student Control</a>
+</body>
+</html>

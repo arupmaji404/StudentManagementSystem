@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>This is admin home page</h1>
+	
+	<a href="/admin-control">Admin Control</a>
+	<a href="/teacher-control">Teacher Control</a>
+	<a href="/student-control">Student Control</a>
+</body>
+</html>
