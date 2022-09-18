@@ -1,5 +1,0 @@
-package com.studentmanagement.service;
-
-public class LoginServiceImpl implements LoginService{
-	
-}

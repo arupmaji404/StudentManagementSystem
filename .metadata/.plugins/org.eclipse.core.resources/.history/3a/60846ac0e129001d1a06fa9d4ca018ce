@@ -1,9 +1,0 @@
-package com.studentmanagement.repo;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.studentmanagement.model.LoginModel;
-
-public interface LoginRepository extends JpaRepository<LoginModel, Integer> {
-
-}

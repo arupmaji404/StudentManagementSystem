@@ -7,5 +7,9 @@ import com.studentmanagement.model.LoginModel;
 
 @Repository
 public interface LoginRepository extends JpaRepository<LoginModel, Integer> {
-
+//	public void deleteByEmail(String email);
+//	@Modifying
+//	@Query("delete from LoginModel l where l.email=:email")
+//	public void deleteByEmail(@Param("email") String email);
+	public LoginModel findByEmail(String email);
 }

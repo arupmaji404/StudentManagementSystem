@@ -1,5 +1,0 @@
-package com.studentmanagement.repo;
-
-public interface LoginRepository {
-
-}

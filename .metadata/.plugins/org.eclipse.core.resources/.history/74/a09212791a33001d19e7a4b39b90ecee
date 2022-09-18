@@ -1,0 +1,33 @@
+package com.studentmanagement.service;
+
+import java.util.List;
+
+import com.studentmanagement.model.StudentModel;
+
+public class StudentServiceImpl implements StudentService {
+
+	@Override
+	public List<StudentModel> getAllStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public StudentModel addStudent(StudentModel student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteStudent(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public StudentModel getStudent(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

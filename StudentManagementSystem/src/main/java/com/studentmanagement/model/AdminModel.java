@@ -1,21 +1,30 @@
 package com.studentmanagement.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "admin")
 public class AdminModel {
 
 	@Id
-	private String username;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 	private String name;
+	@Column(unique = true, nullable = false)
 	private String email;
-	public String getUsername() {
-		return username;
+
+	public int getId() {
+		return id;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setId(int id) {
+		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
@@ -34,9 +43,12 @@ public class AdminModel {
 	}
 	public AdminModel(String username, String name, String email) {
 		super();
-		this.username = username;
 		this.name = name;
 		this.email = email;
+	}
+	@Override
+	public String toString() {
+		return "AdminModel [id=" + id + ", name=" + name + ", email=" + email + "]";
 	}
 	
 	

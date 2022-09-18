@@ -1,0 +1,5 @@
+package com.studentmanagement.service;
+
+public interface StudentService {
+
+}

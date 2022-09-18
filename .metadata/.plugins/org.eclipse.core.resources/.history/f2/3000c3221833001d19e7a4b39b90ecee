@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	<div class="text-center mb-2">
+		<h1>This is teacher control page</h1>
+
+		<a th:href="@{/addTeacherForm}" class="btn btn-info">Add Teacher</a>
+	</div>
+
+
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Address</th>
+				<th>Qualification</th>
+				<th>Subject</th>
+				<th>Her Class</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${teachers.empty}">
+				<td colspan="8">No Teachers Available</td>
+			</tr>
+			<tr th:each="teacher : ${teachers}">
+				<td><span th:text="${teacher.id}"> Id </span></td>
+				<td><span th:text="${teacher.name}"> Name </span></td>
+				<td><span th:text="${teacher.email}"> Email </span></td>
+				<td><span th:text="${teacher.address}"> Address </span></td>
+				<td><span th:text="${teacher.qualification}"> Qualification </span></td>
+				<td><span th:text="${teacher.subject}"> Subject </span></td>
+				<td><span th:text="${teacher.herClass}"> Her Class </span></td>
+				
+				
+				<td><a th:href="@{/showTeacherUpdateForm(teacherId=${teacher.id})}"
+					class="btn btn-info">Update</a> <a
+					th:href="@{/deleteTeacher(teacherId=${teacher.id})}"
+					class="btn btn-danger m1-2">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

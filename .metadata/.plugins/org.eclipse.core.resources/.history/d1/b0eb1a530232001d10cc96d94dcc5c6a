@@ -1,0 +1,33 @@
+package com.studentmanagement.service;
+
+import java.util.List;
+
+import com.studentmanagement.model.TeacherModel;
+
+public class TeacherServiceImpl implements TeacherService {
+
+	@Override
+	public List<TeacherModel> getAllTeachers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TeacherModel addTeacher(TeacherModel teacher) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteTeacher(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public TeacherModel getTeacher(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
