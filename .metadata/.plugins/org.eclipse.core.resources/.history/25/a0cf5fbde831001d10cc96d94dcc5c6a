@@ -1,9 +1,0 @@
-package com.studentmanagement.repo;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.studentmanagement.model.TeacherModel;
-
-public interface TeacherRepository extends JpaRepository<TeacherModel, Integer> {
-
-}

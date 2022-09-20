@@ -14,4 +14,5 @@ public interface TeacherService {
 //	public AdminModel getAdmin(String email);
 	public TeacherModel getTeacher(int id);
 	public TeacherModel getTeacherByEmail(String email);
+	public long getCount();
 }

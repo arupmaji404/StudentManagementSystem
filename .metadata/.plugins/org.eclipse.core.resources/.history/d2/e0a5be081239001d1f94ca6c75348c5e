@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Navigation Bar</title>
+
+</head>
+<body>
+
+<nav th:fragment="navbar" class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/student/studentIndex}">Student Management System</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a class="nav-link" th:href="@{/student/view-marks}">View Marks</a></li>
+			<li><a class="nav-link" th:href="@{/student/view-class-marks}">View Class Marks</a></li>
+            <li><a class="nav-link" th:href="@{/logout}">Logout</a></li>
+		</ul>
+    </div>    
+</nav>
+
+</body>
+</html>

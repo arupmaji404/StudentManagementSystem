@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>All Students</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	<div class="text-center mb-2">
+		<a th:href="@{/admin/addStudentForm}" class="btn btn-info">Add Student</a>
+	</div>
+
+	<table class="table table-bordered table-striped text-center">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Roll</th>
+				<th>Email</th>
+				<th>Standard</th>
+				<th>Address</th>
+				<th>Parent</th>
+				<th>Phone</th>
+				<th>Gender</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${students.empty}">
+				<td colspan="10">No Students Available</td>
+			</tr>
+			<tr th:each="student : ${students}">
+				<td><span th:text="${student.id}"> Id </span></td>
+				<td><span th:text="${student.name}"> Name </span></td>
+				<td><span th:text="${student.roll}"> Roll </span></td>
+				<td><span th:text="${student.email}"> Email </span></td>
+				<td><span th:text="${student.standard}"> Standard </span></td>
+				<td><span th:text="${student.address}"> Address </span></td>
+				<td><span th:text="${student.parent}"> Parent </span></td>
+				<td><span th:text="${student.phno}"> Phone </span></td>
+				<td><span th:text="${student.gender}"> Gender </span></td>
+				
+				
+				<td><a th:href="@{/admin/showStudentUpdateForm(studentId=${student.id})}"
+					class="btn btn-info">Update</a> <a
+					th:href="@{/admin/deleteStudent(studentId=${student.id})}"
+					class="btn btn-danger m1-2">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

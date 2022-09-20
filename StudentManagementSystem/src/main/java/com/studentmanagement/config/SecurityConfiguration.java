@@ -30,6 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.antMatchers("/student/**").hasRole("STUDENT")
 			.antMatchers("/").permitAll()
 			.and().formLogin();
+		http.logout().logoutSuccessUrl("/");
 	}
 	
 	@Bean
@@ -37,4 +38,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	{
 		return new BCryptPasswordEncoder();
 	}
+	
+	
 }

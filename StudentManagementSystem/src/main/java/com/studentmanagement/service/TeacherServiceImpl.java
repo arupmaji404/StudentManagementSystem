@@ -38,6 +38,12 @@ public class TeacherServiceImpl implements TeacherService {
 		// TODO Auto-generated method stub
 		return teacherRepository.findByEmail(email);
 	}
+
+	@Override
+	public long getCount() {
+		// TODO Auto-generated method stub
+		return teacherRepository.count();
+	}
 	
 	
 

@@ -43,4 +43,10 @@ public class AdminServiceImpl implements AdminService {
 		return adminRepo.findById(id).get();
 	}
 
+	@Override
+	public long getCount() {
+		// TODO Auto-generated method stub
+		return adminRepo.count();
+	}
+
 }

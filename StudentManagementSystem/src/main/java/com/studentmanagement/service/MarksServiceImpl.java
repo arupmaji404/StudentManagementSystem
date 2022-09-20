@@ -22,4 +22,10 @@ public class MarksServiceImpl implements MarksService {
 		return marksRepo.findByEmail(email);
 	}
 
+	@Override
+	public void deleteMarks(MarksModel marks) {
+		marksRepo.delete(marks);
+		
+	}
+
 }

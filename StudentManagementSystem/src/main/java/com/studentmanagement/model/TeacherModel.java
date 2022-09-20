@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "teacher")
@@ -13,11 +17,16 @@ public class TeacherModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int Id;
+	@NotBlank(message = "Email can't be empty")
+	@Email
 	private String email;
+	@NotBlank(message = "Name can't be empty")
 	private String name;
 	private String address;
 	private String qualification;
 	private String subject;
+	@Max(10)
+	@Min(4)
 	private int herClass;
 	public int getId() {
 		return Id;

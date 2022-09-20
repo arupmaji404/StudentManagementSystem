@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>NavigationBar</title>
+<title>Teacher Navigation Bar</title>
 
 </head>
 <body>
@@ -11,15 +11,15 @@
 		class="navbar navbar-expand-md bg-dark navbar-dark">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" th:href="@{/teacher/teacherindex}">Student
+				<a class="navbar-brand btn btn-success" th:href="@{/teacher/teacherIndex}">Student
 					Management System</a>
 			</div>
-			<ul class="nav navbar-nav">
-				<li><a class="nav-link" th:href="@{/teacher/upload-marks}">Update
+			<ul class="nav navbar-nav ">
+				<li><a class="nav-link btn btn-primary ml-2" th:href="@{/teacher/upload-marks}"  style="color: white">Update
 						Marks</a></li>
-				<li><a class="nav-link" th:href="@{/teacher/view-marks}">View Class
+				<li><a class="nav-link btn btn-primary ml-2" th:href="@{/teacher/view-marks}"  style="color: white">View Class
 						Marks</a></li>
-				<li><a class="nav-link" th:href="@{/logout}">Logout</a></li>
+				<li><a class="nav-link btn btn-danger ml-2" th:href="@{/logout}"  style="color: white">Logout</a></li>	
 			</ul>
 		</div>
 	</nav>

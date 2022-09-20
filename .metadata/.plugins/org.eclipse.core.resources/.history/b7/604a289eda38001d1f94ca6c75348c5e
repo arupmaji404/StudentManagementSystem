@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div th:insert="navbar_teacher :: navbar"></div>
+	<div class="text-center mb-2">
+		<h1>This is view Marks  page</h1>
+	</div>
+
+
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Email</th>
+				<th>English</th>
+				<th>Math</th>
+				<th>Science</th>
+				<th>SST</th>
+				<th>Computer</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${allmarks.empty}">
+				<td colspan="7">No Students Available</td>
+			</tr>
+			<tr th:each="marks : ${allmarks}">
+				<td><span th:text="${marks.id}"> Id </span></td>
+				<td><span th:text="${marks.email}"> Name </span></td>
+				<td><span th:text="${marks.english}"> Roll </span></td>
+				<td><span th:text="${marks.math}"> Email </span></td>
+				<td><span th:text="${marks.science}"> Standard </span></td>
+				<td><span th:text="${marks.sst}"> Address </span></td>
+				<td><span th:text="${marks.computer}"> Parent </span></td>
+				
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

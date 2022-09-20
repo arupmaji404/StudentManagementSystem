@@ -38,6 +38,18 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public List<StudentModel> getAllStudentsByStandard(Integer standard) {
 		return studentRepo.findAllStudentsByStandard(standard);
+		
+	}
+
+	@Override
+	public StudentModel getStudentByEmail(String email) {
+		return studentRepo.findByEmail(email);
+	}
+
+	@Override
+	public long getCount() {
+		// TODO Auto-generated method stub
+		return studentRepo.count();
 	}
 	
 

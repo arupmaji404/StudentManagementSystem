@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Marks</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div th:insert="navbar_student :: navbar"></div>
+	<div class="text-center mb-2">
+		<h1>This is student marks viewing page</h1>
+	</div>
+
+
+	<table class="table table-bordered table-striped text-center">
+		<thead>
+			<tr>
+				<th><th>
+				<th>English</th>
+				<th>Math</th>
+				<th>Science</th>
+				<th>SST</th>
+				<th>Computer</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<td><span th:text="Min: "> Minimum </span></td>
+				<td><span th:text="${min_english}"> English </span></td>
+				<td><span th:text="${min_math}"> Math </span></td>
+				<td><span th:text="${min_science}"> Science </span></td>
+				<td><span th:text="${min_sst}"> SST </span></td>
+				<td><span th:text="${min_computer}"> Computer </span></td>
+			</tr>
+			<tr>
+			<td><span th:text="Max: "> Maximum </span></td>
+				<td><span th:text="${max_english}"> English </span></td>
+				<td><span th:text="${max_math}"> Math </span></td>
+				<td><span th:text="${max_science}"> Science </span></td>
+				<td><span th:text="${max_sst}"> SST </span></td>
+				<td><span th:text="${max_computer}"> Computer </span></td>
+			</tr>
+			<tr>
+			<td><span th:text="Avg: "> Average </span></td>
+				<td><span th:text="${avg_english}"> English </span></td>
+				<td><span th:text="${avg_math}"> Math </span></td>
+				<td><span th:text="${avg_science}"> Science </span></td>
+				<td><span th:text="${avg_sst}"> SST </span></td>
+				<td><span th:text="${avg_computer}"> Computer </span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

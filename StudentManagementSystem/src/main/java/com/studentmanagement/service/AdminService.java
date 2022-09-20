@@ -14,4 +14,5 @@ public interface AdminService {
 	public void deleteAdmin(int id);
 //	public AdminModel getAdmin(String email);
 	public AdminModel getAdmin(int id);
+	public long getCount();
 }

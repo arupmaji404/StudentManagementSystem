@@ -2,20 +2,25 @@ package com.studentmanagement.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.studentmanagement.model.AdminModel;
 import com.studentmanagement.model.LoginModel;
+import com.studentmanagement.model.MarksModel;
 import com.studentmanagement.model.StudentModel;
 import com.studentmanagement.model.TeacherModel;
 import com.studentmanagement.service.AdminServiceImpl;
 import com.studentmanagement.service.LoginServiceImpl;
+import com.studentmanagement.service.MarksServiceImpl;
 import com.studentmanagement.service.StudentServiceImpl;
 import com.studentmanagement.service.TeacherServiceImpl;
 
@@ -35,16 +40,17 @@ public class AdminController {
 	@Autowired
 	private StudentServiceImpl studentService;
 	
-	@RequestMapping("/admin")
-	public String admincheck()
-	{
-		System.out.println("inside admin");
-		return "";
-	}
+	@Autowired
+	private MarksServiceImpl marksService;
+	
 	
 	@RequestMapping("/adminIndex")
-	public String adminIndex()
+	public String adminIndex(Model model)
 	{
+		model.addAttribute("adminCount", adminService.getCount());
+		model.addAttribute("teacherCount", teacherService.getCount());
+		model.addAttribute("studentCount", studentService.getCount());
+		
 		return "admin/adminHome";
 	}
 	
@@ -143,8 +149,14 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/addTeacher")
-	public String addTeacher(@ModelAttribute("teacher") TeacherModel teacher, @RequestParam("password") String pass)
+	public String addTeacher(@Valid @ModelAttribute("teacher") TeacherModel teacher, BindingResult result, @RequestParam("password") String pass)
 	{
+		if(result.hasErrors())
+		{
+			System.out.println(result);
+			System.out.println("Error occured");
+			return "admin/add-teacher-form";
+		}
 		LoginModel loginModel = new LoginModel();
 		loginModel.setEmail(teacher.getEmail());
 		loginModel.setPassword(new BCryptPasswordEncoder().encode(pass));
@@ -245,6 +257,9 @@ public class AdminController {
 		studentService.deleteStudent(id);
 		LoginModel lm = loginService.findByEmail(student.getEmail()).get();
 		loginService.deleteUser(lm);
+		MarksModel mm = marksService.findMarksByEmail(student.getEmail());
+		marksService.deleteMarks(mm);
+		
 		return "redirect:student-control";
 	}
 	
@@ -265,8 +280,11 @@ public class AdminController {
 			LoginModel login = loginService.findByEmail((studentService.getStudent(student.getId())).getEmail()).get();
 			System.out.println(login);
 			login.setEmail(student.getEmail());
+			MarksModel marksModel = marksService.findMarksByEmail((studentService.getStudent(student.getId())).getEmail());
+			marksModel.setEmail(student.getEmail());
 			studentService.addStudent(student);
 			loginService.addUser(login);
+			marksService.addMarks(marksModel);
 			return "redirect:student-control";
 		}
 	
