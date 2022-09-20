@@ -1,5 +1,7 @@
 package com.studentmanagement.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,7 @@ public class LoginServiceImpl implements LoginService{
 	}
 
 	@Override
-	public LoginModel findByEmail(String email) {
+	public Optional<LoginModel> findByEmail(String email) {
 		return loginRepository.findByEmail(email);
 	}
 

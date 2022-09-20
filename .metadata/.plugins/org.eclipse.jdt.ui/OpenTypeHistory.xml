@@ -4,5 +4,6 @@
     <typeInfo handle="=StudentManagementSystem/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.studentmanagement.service{AdminService.java[AdminService" modifiers="513" timestamp="1662919472600"/>
     <typeInfo handle="=StudentManagementSystem/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.studentmanagement.service{TeacherService.java[TeacherService" modifiers="513" timestamp="1662921917472"/>
     <typeInfo handle="=StudentManagementSystem/C:\/Users\/Hp\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.7.2\/spring-data-jpa-2.7.2.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.7.2=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1659935347417"/>
-    <typeInfo handle="=StudentManagementSystem/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.studentmanagement.service{StudentService.java[StudentService" modifiers="513" timestamp="1663042270247"/>
+    <typeInfo handle="=StudentManagementSystem/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.studentmanagement.service{StudentService.java[StudentService" modifiers="513" timestamp="1663501409725"/>
+    <typeInfo handle="=StudentManagementSystem/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.studentmanagement.service{MarksService.java[MarksService" modifiers="513" timestamp="1663502876861"/>
 </typeInfoHistroy>

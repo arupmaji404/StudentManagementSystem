@@ -1,0 +1,21 @@
+package com.studentmanagement.config;
+
+import java.util.Optional;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.studentmanagement.model.LoginModel;
+import com.studentmanagement.repo.LoginRepository;
+
+public class MyUserDetailsService implements UserDetailsService {
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		Optional<LoginModel> loginModel = LoginRepository.findByEmail(username);
+		loginModel.orElseThrow(() -> new UsernameNotFoundException("Not Found: " + username);
+		
+	}
+
+}

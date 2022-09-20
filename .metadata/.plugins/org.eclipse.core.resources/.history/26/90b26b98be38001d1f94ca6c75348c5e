@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	<div class="text-center mb-2">
+		<h1>This is student marks viewing page</h1>
+	</div>
+
+
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>English</th>
+				<th>Math</th>
+				<th>Science</th>
+				<th>SST</th>
+				<th>Computer</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${marks == null}">
+				<td colspan="10">No Students Available</td>
+			</tr>
+			<tr>
+				<td><span th:text="${student.id}"> English </span></td>
+				<td><span th:text="${student.name}"> Math </span></td>
+				<td><span th:text="${student.roll}"> Science </span></td>
+				<td><span th:text="${student.email}"> SST </span></td>
+				<td><span th:text="${student.standard}"> Computer </span></td>
+				
+				
+				<td><a th:href="@{/admin/showStudentUpdateForm(studentId=${student.id})}"
+					class="btn btn-info">Update</a> <a
+					th:href="@{/admin/deleteStudent(studentId=${student.id})}"
+					class="btn btn-danger m1-2">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

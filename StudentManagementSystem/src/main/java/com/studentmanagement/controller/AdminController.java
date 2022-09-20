@@ -3,6 +3,7 @@ package com.studentmanagement.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -33,6 +34,13 @@ public class AdminController {
 	
 	@Autowired
 	private StudentServiceImpl studentService;
+	
+	@RequestMapping("/admin")
+	public String admincheck()
+	{
+		System.out.println("inside admin");
+		return "";
+	}
 	
 	@RequestMapping("/adminIndex")
 	public String adminIndex()
@@ -66,8 +74,9 @@ public class AdminController {
 		
 		LoginModel loginModel = new LoginModel();
 		loginModel.setEmail(admin.getEmail());
-		loginModel.setPassword(pass);
+		loginModel.setPassword(new BCryptPasswordEncoder().encode(pass));
 		loginModel.setRole("ROLE_ADMIN");
+		loginModel.setActive(true);
 		loginService.addUser(loginModel);
 		
 		AdminModel adminModel = new AdminModel();
@@ -86,7 +95,7 @@ public class AdminController {
 	{
 		AdminModel admin = adminService.getAdmin(id);
 		adminService.deleteAdmin(id);
-		LoginModel lm = loginService.findByEmail(admin.getEmail());
+		LoginModel lm = loginService.findByEmail(admin.getEmail()).get();
 		loginService.deleteUser(lm);
 		return "redirect:admin-control";
 	}
@@ -94,7 +103,7 @@ public class AdminController {
 	//update admin
 	
 	@RequestMapping("/showAdminUpdateForm")
-	public String showDoctorUpdateForm(@RequestParam int adminId, Model model)
+	public String showAdminUpdateForm(@RequestParam int adminId, Model model)
 	{
 		AdminModel admin = adminService.getAdmin(adminId);
 		model.addAttribute("admin", admin);
@@ -105,7 +114,7 @@ public class AdminController {
 	public String editAdmin(@ModelAttribute("admin") AdminModel admin)
 	{
 		System.out.println(admin);
-		LoginModel login = loginService.findByEmail((adminService.getAdmin(admin.getId())).getEmail());
+		LoginModel login = loginService.findByEmail((adminService.getAdmin(admin.getId())).getEmail()).get();
 		System.out.println(login);
 		login.setEmail(admin.getEmail());
 		adminService.addAdmin(admin);
@@ -138,8 +147,9 @@ public class AdminController {
 	{
 		LoginModel loginModel = new LoginModel();
 		loginModel.setEmail(teacher.getEmail());
-		loginModel.setPassword(pass);
+		loginModel.setPassword(new BCryptPasswordEncoder().encode(pass));
 		loginModel.setRole("ROLE_TEACHER");
+		loginModel.setActive(true);
 		loginService.addUser(loginModel);
 		
 		TeacherModel teacherModel = new TeacherModel();
@@ -159,10 +169,33 @@ public class AdminController {
 	{
 		TeacherModel teacher = teacherService.getTeacher(id);
 		teacherService.deleteTeacher(id);
-		LoginModel lm = loginService.findByEmail(teacher.getEmail());
+		LoginModel lm = loginService.findByEmail(teacher.getEmail()).get();
 		loginService.deleteUser(lm);
 		return "redirect:teacher-control";
 	}
+	
+	//update teacher
+	
+	@RequestMapping("/showTeacherUpdateForm")
+	public String showTeacherUpdateForm(@RequestParam int teacherId, Model model)
+	{
+		TeacherModel teacher = teacherService.getTeacher(teacherId);
+		model.addAttribute("teacher", teacher);
+		return "admin/teacherUpdate";
+	}
+	
+	@RequestMapping("/editTeacher")
+	public String editTeacher(@ModelAttribute("teacher") TeacherModel teacher)
+	{
+		System.out.println(teacher);
+		LoginModel login = loginService.findByEmail((teacherService.getTeacher(teacher.getId())).getEmail()).get();
+		System.out.println(login);
+		login.setEmail(teacher.getEmail());
+		teacherService.addTeacher(teacher);
+		loginService.addUser(login);
+		return "redirect:teacher-control";
+	}
+	
 	
 	// Handling the student control
 	@RequestMapping("/student-control")
@@ -186,8 +219,9 @@ public class AdminController {
 	{
 		LoginModel loginModel = new LoginModel();
 		loginModel.setEmail(student.getEmail());
-		loginModel.setPassword(pass);
+		loginModel.setPassword(new BCryptPasswordEncoder().encode(pass));
 		loginModel.setRole("ROLE_STUDENT");
+		loginModel.setActive(true);
 		loginService.addUser(loginModel);
 		
 		StudentModel studentModel = new StudentModel();
@@ -209,10 +243,32 @@ public class AdminController {
 	{
 		StudentModel student = studentService.getStudent(id);
 		studentService.deleteStudent(id);
-		LoginModel lm = loginService.findByEmail(student.getEmail());
+		LoginModel lm = loginService.findByEmail(student.getEmail()).get();
 		loginService.deleteUser(lm);
 		return "redirect:student-control";
 	}
+	
+	//update student
+	
+		@RequestMapping("/showStudentUpdateForm")
+		public String showStudentUpdateForm(@RequestParam int studentId, Model model)
+		{
+			StudentModel student = studentService.getStudent(studentId);
+			model.addAttribute("student", student);
+			return "admin/studentUpdate";
+		}
+		
+		@RequestMapping("/editStudent")
+		public String editStudent(@ModelAttribute("student") StudentModel student)
+		{
+			System.out.println(student);
+			LoginModel login = loginService.findByEmail((studentService.getStudent(student.getId())).getEmail()).get();
+			System.out.println(login);
+			login.setEmail(student.getEmail());
+			studentService.addStudent(student);
+			loginService.addUser(login);
+			return "redirect:student-control";
+		}
 	
 	
 	

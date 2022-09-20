@@ -35,4 +35,10 @@ public class StudentServiceImpl implements StudentService {
 		return studentRepo.findById(id).get();
 	}
 
+	@Override
+	public List<StudentModel> getAllStudentsByStandard(Integer standard) {
+		return studentRepo.findAllStudentsByStandard(standard);
+	}
+	
+
 }

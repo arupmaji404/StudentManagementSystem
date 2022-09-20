@@ -1,0 +1,30 @@
+package com.studentmanagement.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.studentmanagement.service.StudentService;
+
+@Controller
+@RequestMapping("/teacher")
+public class TeacherController {
+
+	@Autowired
+	StudentService studentService;
+	
+	@RequestMapping("/teacherIndex")
+	public String home()
+	{
+		return "teacher/teacherHome";
+	}
+	
+	@RequestMapping("/upload-marks")
+	public String uploadMarks()
+	{
+		
+		int teacher_class = 8;
+		System.out.println(studentService.getAllStudentsByStandard(teacher_class));
+		return "teacher/upload-marks";
+	}
+}

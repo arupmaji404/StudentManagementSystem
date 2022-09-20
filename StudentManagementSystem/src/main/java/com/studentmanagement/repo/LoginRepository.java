@@ -1,5 +1,7 @@
 package com.studentmanagement.repo;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +13,5 @@ public interface LoginRepository extends JpaRepository<LoginModel, Integer> {
 //	@Modifying
 //	@Query("delete from LoginModel l where l.email=:email")
 //	public void deleteByEmail(@Param("email") String email);
-	public LoginModel findByEmail(String email);
+	public Optional<LoginModel> findByEmail(String email);
 }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container my-3">
+		<div class="container mt-5">
+			<div class="card" style="width: 55rem;">
+				<div class="card-header text-center bg-info">
+					<h3>Teacher Update Form</h3>
+				</div>
+				<div class="card-body">
+					<form th:action="@{/admin/editTeacher}" method="post">
+						<div class="form-group">
+							<input type="hidden"
+								class="form-control" id="exampleInputEmail1" name = "id"
+								aria-describedby="emailHelp" th:value="${teacher.id}">
+						</div>
+						
+						<div class="form-group">
+							<label for="exampleInputEmail1">Name</label> <input type="text"
+								class="form-control" id="exampleInputEmail1" name = "name"
+								aria-describedby="emailHelp" th:value="${teacher.name}">
+						</div>
+						<div class="form-group">
+							<label for="exampleInput Password1">Email</label> <input
+								type="text" class="form-control" id="exampleInput Password1"
+								name = "email" th:value="${teacher.email}">
+						</div>
+						
+						<div class="form-group">
+							<label for="exampleInputEmail1">Address</label> <input type="text"
+								class="form-control" id="exampleInputEmail1" name = "address"
+								aria-describedby="emailHelp" th:value="${teacher.address}">
+						</div>
+						<div class="form-group">
+							<label for="exampleInput Password1">Qualification</label> <input
+								type="text" class="form-control" id="exampleInput Password1"
+								name = "qualification" th:value="${teacher.qualification}">
+						</div>
+						
+						<div class="form-group">
+							<label for="exampleInputEmail1">Subject</label> <input type="text"
+								class="form-control" id="exampleInputEmail1" name = "subject"
+								aria-describedby="emailHelp" th:value="${teacher.subject}">
+						</div>
+						<div class="form-group">
+							<label for="exampleInput Password1">Class</label> <input
+								type="text" class="form-control" id="exampleInput Password1"
+								name = "herClass" th:value="${teacher.herClass}">
+						</div>
+						
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary">Update</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

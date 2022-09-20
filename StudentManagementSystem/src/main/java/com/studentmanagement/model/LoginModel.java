@@ -17,6 +17,7 @@ public class LoginModel {
 	@Column(unique = true, nullable = false)
 	private String email;
 	private String password;
+	private boolean active;
 	private String role;
 	public int getId() {
 		return id;
@@ -41,6 +42,13 @@ public class LoginModel {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 	@Override
 	public String toString() {

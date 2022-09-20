@@ -14,4 +14,5 @@ public interface StudentService {
 	public void deleteStudent(int id);
 //	public AdminModel getAdmin(String email);
 	public StudentModel getStudent(int id);
+	public List<StudentModel> getAllStudentsByStandard(Integer standard);
 }

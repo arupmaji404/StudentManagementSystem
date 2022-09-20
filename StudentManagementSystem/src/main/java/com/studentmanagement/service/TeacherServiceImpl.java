@@ -33,4 +33,12 @@ public class TeacherServiceImpl implements TeacherService {
 		return teacherRepository.findById(id).get();
 	}
 
+	@Override
+	public TeacherModel getTeacherByEmail(String email) {
+		// TODO Auto-generated method stub
+		return teacherRepository.findByEmail(email);
+	}
+	
+	
+
 }

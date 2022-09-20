@@ -1,0 +1,32 @@
+package com.studentmanagement.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.studentmanagement.model.MarksModel;
+import com.studentmanagement.service.MarksServiceImpl;
+
+@Controller
+@RequestMapping("/student")
+public class StudentController {
+	
+	@Autowired
+	private MarksServiceImpl marksService;
+
+	@RequestMapping("/studentIndex")
+	public String home()
+	{
+		return "student/studentHome";
+	}
+	
+	@RequestMapping("/view-marks")
+	public String viewMarks(Model model)
+	{
+		String email = "test1@gmail.com";
+		MarksModel marks = marksService.findMarksByEmail(email);
+		model.addAttribute("marks", marks);
+		return "student/viewmarks";
+	}
+}

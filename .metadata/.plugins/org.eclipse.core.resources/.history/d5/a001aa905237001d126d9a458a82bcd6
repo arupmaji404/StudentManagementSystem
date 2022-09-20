@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container my-3">
+		<div class="container mt-5">
+			<div class="card" style="width: 55rem;">
+				<div class="card-header text-center bg-info">
+					<h3>Update Marks</h3>
+					<h3 th:text="${marks.email}"></h3>
+				</div>
+				<div class="card-body">
+					<form th:action="@{/teacher/updateMarks}" method="post">
+						<div class="form-group">
+							<input type="hidden"
+								class="form-control" id="exampleInputEmail1" name = "id"
+								aria-describedby="emailHelp" th:value="${marks.id}">
+						</div>
+						<div class="form-group">
+							<input type="hidden"
+								class="form-control" id="exampleInputEmail1" name = "email"
+								aria-describedby="emailHelp" th:value="${marks.email}">
+						</div>
+						
+						<div class="form-group">
+							<label for="exampleInputEmail1">English</label> <input type="text"
+								class="form-control" id="exampleInputEmail1" name = "name"
+								aria-describedby="emailHelp" th:value="${marks.english}">
+						</div>
+						<div class="form-group">
+							<label for="exampleInput Password1">Math</label> <input
+								type="text" class="form-control" id="exampleInput Password1"
+								name = "email" th:value="${marks.math}">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Science</label> <input type="text"
+								class="form-control" id="exampleInputEmail1" name = "science"
+								aria-describedby="emailHelp" th:value="${marks.science}">
+						</div>
+						<div class="form-group">
+							<label for="exampleInput Password1">SST</label> <input
+								type="text" class="form-control" id="exampleInput Password1"
+								name = "sst" th:value="${marks.sst}">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Computer</label> <input type="text"
+								class="form-control" id="exampleInputEmail1" name = "computer"
+								aria-describedby="emailHelp" th:value="${marks.computer}">
+						</div>
+						
+						
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary">Update</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

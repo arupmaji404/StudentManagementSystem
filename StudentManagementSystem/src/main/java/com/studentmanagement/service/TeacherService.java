@@ -13,4 +13,5 @@ public interface TeacherService {
 	public void deleteTeacher(int id);
 //	public AdminModel getAdmin(String email);
 	public TeacherModel getTeacher(int id);
+	public TeacherModel getTeacherByEmail(String email);
 }

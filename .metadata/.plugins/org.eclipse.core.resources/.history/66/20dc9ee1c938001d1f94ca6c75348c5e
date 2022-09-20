@@ -1,0 +1,22 @@
+package com.studentmanagement.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.studentmanagement.repo.LoginRepository;
+
+@Controller
+public class LoginController {
+	
+	@Autowired
+	private LoginRepository loginRepo;
+	
+	@RequestMapping("")
+	public String home()
+	{
+		
+		return "home";
+	}
+	
+	
+}
