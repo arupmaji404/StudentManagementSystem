@@ -1,43 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>Employee</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-</head>
-<body>
-	<div th:insert="navbar_student :: navbar"></div>
-	<div class="text-center mb-2">
-		<h1>This is student marks viewing page</h1>
-	</div>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>SMS</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div th:insert="navbar_student :: navbar"></div>
+    <div class="text-center mb-2">
+      <h1>This is student marks viewing page</h1>
+    </div>
 
-
-	<table class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<th>English</th>
-				<th>Math</th>
-				<th>Science</th>
-				<th>SST</th>
-				<th>Computer</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:if="${marks == null}">
-				<td colspan="5">No Marks Given</td>
-			</tr>
-			<tr th:if="${marks != null}">
-				<td><span th:text="${marks.english}"> English </span></td>
-				<td><span th:text="${marks.math}"> Math </span></td>
-				<td><span th:text="${marks.science}"> Science </span></td>
-				<td><span th:text="${marks.sst}"> SST </span></td>
-				<td><span th:text="${marks.computer}"> Computer </span></td>
-				
-		</tbody>
-	</table>
-</body>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>English</th>
+          <th>Math</th>
+          <th>Science</th>
+          <th>SST</th>
+          <th>Computer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:if="${marks == null}">
+          <td colspan="5">No Marks Given</td>
+        </tr>
+        <tr th:if="${marks != null}">
+          <td><span th:text="${marks.english}"> English </span></td>
+          <td><span th:text="${marks.math}"> Math </span></td>
+          <td><span th:text="${marks.science}"> Science </span></td>
+          <td><span th:text="${marks.sst}"> SST </span></td>
+          <td><span th:text="${marks.computer}"> Computer </span></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>
