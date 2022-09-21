@@ -1,0 +1,136 @@
+<!-- <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<h1>Home page</h1>
+	<a class="btn btn-primary" href="/admin/adminIndex" role="button">Admin Login</a>
+	
+	<a class="btn btn-primary" href="/teacher/teacherIndex" role="button">Teacher Login</a>
+	
+	<a class="btn btn-primary" href="/student/studentIndex" role="button">Student Login</a>
+	
+	
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif
+}
+/* 
+.banner {
+	width: 100%;
+	height: 100vh;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.75),
+		rgba(0, 0, 0, 0.75)),
+		url(https://thumbs.dreamstime.com/b/student-management-system-inscription-page-student-management-system-inscription-page-185564938.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+} */
+.navbar {
+	width: 85%;
+	margin: auto;
+	padding: 35px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	width: 120px;
+	cursor: pointer;
+}
+
+.navbar ul li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+	position: relative;
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	color: floralwhite;
+	text-transform: uppercase;
+}
+
+.navbar ul li::after {
+	content: '';
+	height: 3px;
+	width: 0;
+	background: #009688;
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+	width: 100%;
+}
+
+.myBody{
+	width: 100%;
+	height: 100vh;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.75),
+		rgba(0, 0, 0, 0.8)),
+	url(https://thumbs.dreamstime.com/b/student-management-system-inscription-page-student-management-system-inscription-page-185564938.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+</style>
+</head>
+<body class = "myBody">
+	<div class="banner">
+		<div class="navbar">
+			<!-- 			<img src="https://nivt.in/sms/assets/img/sms-logo.png" class="logo">
+
+ -->
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdl3vSm5B8TMzA3cJ_hfreipJnRNexNk6Qcw&usqp=CAU" class="logo">
+			
+
+			<ul>
+				<li><a href="/admin/adminIndex">Admin</a></li>
+				<li><a href="/teacher/teacherIndex">Teacher</a></li>
+				<li><a href="/student/studentIndex">Student</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- <div class="container my-3" style="position: relative;">
+		<div class="container mt-5"> -->
+	<div style="position: relative; color: white " class = "text-center mt-50">
+		<h1 style = "font-size: 90px">Student Management System</h1>
+
+			<!-- <div class = "mt-5">
+			<h2>Created By</h2>
+			<ul>
+				<li>Arup Maji</li>
+				<li>Harish Venkatesan M R</li>
+				<li>Prakash K</li>
+				<li>Krishna Vamshi</li>
+			</ul>
+		</div> -->
+	</div>
+
+</body>
+</html>

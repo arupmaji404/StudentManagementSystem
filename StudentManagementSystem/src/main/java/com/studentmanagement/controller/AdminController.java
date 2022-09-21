@@ -281,10 +281,16 @@ public class AdminController {
 			System.out.println(login);
 			login.setEmail(student.getEmail());
 			MarksModel marksModel = marksService.findMarksByEmail((studentService.getStudent(student.getId())).getEmail());
-			marksModel.setEmail(student.getEmail());
+			if(marksModel != null)
+			{
+
+				marksModel.setEmail(student.getEmail());
+
+				marksService.addMarks(marksModel);
+				
+			}
 			studentService.addStudent(student);
 			loginService.addUser(login);
-			marksService.addMarks(marksModel);
 			return "redirect:student-control";
 		}
 	

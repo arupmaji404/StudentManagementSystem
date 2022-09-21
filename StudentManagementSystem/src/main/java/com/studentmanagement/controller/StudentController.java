@@ -26,7 +26,18 @@ public class StudentController {
 	private StudentServiceImpl studentService;
 
 	@RequestMapping("/studentIndex")
-	public String home() {
+	public String home(Model model) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String username = "";
+		if (principal instanceof UserDetails) {
+			username = ((UserDetails) principal).getUsername();
+		} else {
+			username = principal.toString();
+		}
+		String email = username;
+		StudentModel student = studentService.getStudentByEmail(email);
+		System.out.println(student);
+		model.addAttribute("student", student);
 		return "student/studentHome";
 	}
 
