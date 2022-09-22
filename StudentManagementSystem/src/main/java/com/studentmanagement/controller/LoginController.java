@@ -20,7 +20,7 @@ public class LoginController {
 	public String home()
 	{
 		List<LoginModel> loginModels = loginRepo.findAll();
-		if(loginModels.size() == 0)
+		if(loginModels.isEmpty())
 		{
 			System.out.println("Inside 0");
 			LoginModel loginModel = new LoginModel();

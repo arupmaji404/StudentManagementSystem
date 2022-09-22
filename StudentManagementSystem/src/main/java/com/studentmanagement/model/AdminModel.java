@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "admin")
@@ -14,8 +17,10 @@ public class AdminModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	@NotBlank(message = "Name can't be blank")
 	private String name;
 	@Column(unique = true, nullable = false)
+	@Email
 	private String email;
 
 	public int getId() {

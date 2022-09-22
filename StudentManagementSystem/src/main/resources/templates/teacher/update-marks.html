@@ -23,6 +23,7 @@
 								class="form-control" id="exampleInputEmail1" name = "id"
 								aria-describedby="emailHelp" th:value="${marks.id}">
 						</div>
+						
 						<div class="form-group">
 							<input type="hidden"
 								class="form-control" id="exampleInputEmail1" name = "email"
@@ -30,27 +31,38 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="exampleInputEmail1">English</label> <input type="text"
+							<input type="hidden"
+								class="form-control" id="exampleInputEmail1" name = "standard"
+								aria-describedby="emailHelp" th:value="${marks.standard}">
+						</div>
+						
+						<div class="form-group">
+							<label for="exampleInputEmail1">English</label> <input type="number"
+								max="100" min = "0"
 								class="form-control" id="exampleInputEmail1" name = "english"
 								aria-describedby="emailHelp" th:value="${marks.english}">
 						</div>
 						<div class="form-group">
 							<label for="exampleInput Password1">Math</label> <input
-								type="text" class="form-control" id="exampleInput Password1"
+								type="number"
+								max="100" min = "0" class="form-control" id="exampleInput Password1"
 								name = "math" th:value="${marks.math}">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputEmail1">Science</label> <input type="text"
+							<label for="exampleInputEmail1">Science</label> <input type="number"
+								max="100" min = "0"
 								class="form-control" id="exampleInputEmail1" name = "science"
 								aria-describedby="emailHelp" th:value="${marks.science}">
 						</div>
 						<div class="form-group">
 							<label for="exampleInput Password1">SST</label> <input
-								type="text" class="form-control" id="exampleInput Password1"
+								type="number"
+								max="100" min = "0" class="form-control" id="exampleInput Password1"
 								name = "sst" th:value="${marks.sst}">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputEmail1">Computer</label> <input type="text"
+							<label for="exampleInputEmail1">Computer</label> <input type="number"
+								max="100" min = "0"
 								class="form-control" id="exampleInputEmail1" name = "computer"
 								aria-describedby="emailHelp" th:value="${marks.computer}">
 						</div>

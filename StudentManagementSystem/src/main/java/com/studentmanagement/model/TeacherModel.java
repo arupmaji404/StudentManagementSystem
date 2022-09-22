@@ -16,7 +16,7 @@ public class TeacherModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int Id;
+	private int id;
 	@NotBlank(message = "Email can't be empty")
 	@Email
 	private String email;
@@ -28,11 +28,12 @@ public class TeacherModel {
 	@Max(10)
 	@Min(4)
 	private int herClass;
+	
 	public int getId() {
-		return Id;
+		return id;
 	}
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -72,12 +73,8 @@ public class TeacherModel {
 	}
 	@Override
 	public String toString() {
-		return "TeacherModel [Id=" + Id + ", email=" + email + ", name=" + name + ", address=" + address
+		return "TeacherModel [id=" + id + ", email=" + email + ", name=" + name + ", address=" + address
 				+ ", qualification=" + qualification + ", subject=" + subject + ", herClass=" + herClass + "]";
 	}
-	
-	
-	
-	
 	
 }

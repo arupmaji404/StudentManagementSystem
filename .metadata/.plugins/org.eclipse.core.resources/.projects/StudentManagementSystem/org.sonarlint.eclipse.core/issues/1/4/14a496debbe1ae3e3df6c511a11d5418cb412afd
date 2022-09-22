@@ -1,0 +1,31 @@
+
+i	java:S106g"9Replace this use of System.out or System.err by a logger.(ÁÖ§ñùÿÿÿÿHéRMAJORZ
+CODE_SMELL
+|	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¼ãÁHèRMINORZ
+CODE_SMELL
+i	java:S106f"9Replace this use of System.out or System.err by a logger.(ùôÝºÿÿÿÿÿHçRMAJORZ
+CODE_SMELL
+g	java:S125h"<This block of commented-out lines of code should be removed.(§ŠÓ‰HíRMAJORZ
+CODE_SMELL
+g	java:S125F"<This block of commented-out lines of code should be removed.(é¦ÊÅHêRMAJORZ
+CODE_SMELL
+w
+java:S4684["@Replace this persistent entity with a simple POJO or DTO object.(·¿øÝÿÿÿÿÿHïRCRITICALZVULNERABILITY
+i	java:S106T"9Replace this use of System.out or System.err by a logger.(‡½©ÛýÿÿÿÿHôRMAJORZ
+CODE_SMELL
+i	java:S106^"9Replace this use of System.out or System.err by a logger.(îž¸ýÿÿÿÿHîRMAJORZ
+CODE_SMELL
+e	java:S106‚"9Replace this use of System.out or System.err by a logger.(¼’îÌHìRMAJORZ
+CODE_SMELL
+g	java:S125I"<This block of commented-out lines of code should be removed.(±¤ŽÜHóRMAJORZ
+CODE_SMELL
+i	java:S106]"9Replace this use of System.out or System.err by a logger.(ùôÝºÿÿÿÿÿHäRMAJORZ
+CODE_SMELL
+|	java:S117y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¼ãÁHñRMINORZ
+CODE_SMELL
+i	java:S106-"9Replace this use of System.out or System.err by a logger.(­ ‘ˆüÿÿÿÿHðRMAJORZ
+CODE_SMELL
+i	java:S106L"9Replace this use of System.out or System.err by a logger.(ÏÚãÄúÿÿÿÿHõRMAJORZ
+CODE_SMELL
+r
+java:S4684d"@Replace this persistent entity with a simple POJO or DTO object.(¶ü©ÒHòRCRITICALZVULNERABILITY

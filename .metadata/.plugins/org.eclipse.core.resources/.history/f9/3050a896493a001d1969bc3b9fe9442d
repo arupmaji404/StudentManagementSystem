@@ -1,0 +1,52 @@
+package com.studentmanagement.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.studentmanagement.model.MarksModel;
+import com.studentmanagement.repo.MarksRepository;
+
+@Service
+public class MarksServiceImpl implements MarksService {
+	
+	@Autowired
+	private MarksRepository marksRepo;
+
+	@Override
+	public MarksModel addMarks(MarksModel marks) {
+		return marksRepo.save(marks);
+	}
+
+	@Override
+	public MarksModel findMarksByEmail(String email) {
+		return marksRepo.findByEmail(email);
+	}
+
+	@Override
+	public void deleteMarks(MarksModel marks) {
+		marksRepo.delete(marks);
+		
+	}
+
+	@Override
+	public List<MarksModel> findMarksByStandard(int standard) {
+	
+		return marksRepo.findByStandard(standard);
+	}
+
+	@Override
+	public int getMinEnglishMarks(int standard) {
+		// TODO Auto-generated method stub
+		return marksRepo.minEnglish(standard);
+	}
+
+	@Override
+	public Integer getMaxEnglishMarks(int standard) {
+		// TODO Auto-generated method stub
+		return marksRepo.maxEnglish(standard);
+	}
+	
+
+}

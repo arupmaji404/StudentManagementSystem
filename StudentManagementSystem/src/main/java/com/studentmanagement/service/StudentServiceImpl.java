@@ -51,6 +51,12 @@ public class StudentServiceImpl implements StudentService {
 		// TODO Auto-generated method stub
 		return studentRepo.count();
 	}
+
+	@Override
+	public int getCountByStandard(int standard) {
+		// TODO Auto-generated method stub
+		return studentRepo.countByStandard(standard);
+	}
 	
 
 }

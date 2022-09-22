@@ -1,0 +1,21 @@
+package com.studentmanagement.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.studentmanagement.model.MarksModel;
+
+@Repository
+public interface MarksRepository extends JpaRepository<MarksModel, Integer>{
+	public MarksModel findByEmail(String email);
+	public List<MarksModel> findByStandard(int standard);
+	
+	@Query(value = "SELECT min(english) FROM MarksModel")
+	public int minEnglish();
+
+	@Query(value = "SELECT max(english) FROM MarksModel")
+	public int maxEnglish();
+}

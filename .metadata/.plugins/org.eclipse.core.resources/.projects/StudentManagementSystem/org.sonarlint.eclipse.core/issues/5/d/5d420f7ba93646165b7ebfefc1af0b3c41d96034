@@ -1,0 +1,73 @@
+
+j	java:S106×"9Replace this use of System.out or System.err by a logger.(ÔÔÕ“þÿÿÿÿHÆ	RMAJORZ
+CODE_SMELL
+x
+java:S4684ñ"@Replace this persistent entity with a simple POJO or DTO object.( Èø˜üÿÿÿÿHÌ	RCRITICALZVULNERABILITY
+i	java:S106Y"9Replace this use of System.out or System.err by a logger.(•¿ŽªýÿÿÿÿH¸	RMAJORZ
+CODE_SMELL
+j	java:S106¨"9Replace this use of System.out or System.err by a logger.(­ÍÙÏýÿÿÿÿHÃ	RMAJORZ
+CODE_SMELL
+l	java:S125g"<This block of commented-out lines of code should be removed.(Œ”¿ÁÿÿÿÿÿHº	RMAJORZ
+CODE_SMELL
+e	java:S106"9Replace this use of System.out or System.err by a logger.(ºâï‡H©	RMAJORZ
+CODE_SMELL
+k	java:S106X"9Replace this use of System.out or System.err by a logger.(¸å»Ï8ÓÅ¢øµ0H³	RMAJORZ
+CODE_SMELL
+j	java:S106¦"9Replace this use of System.out or System.err by a logger.(ÔÔÕ“þÿÿÿÿHÏ	RMAJORZ
+CODE_SMELL
+z
+java:S3655r"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(„¢ÙýÿÿÿÿH¬	RMAJORZBUG
+{
+java:S3655†"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Úî·üÿÿÿÿHª	RMAJORZBUG
+j	java:S106…"9Replace this use of System.out or System.err by a logger.(‚Îç…ùÿÿÿÿH²	RMAJORZ
+CODE_SMELL
+j	java:S106§"9Replace this use of System.out or System.err by a logger.(®ýáëûÿÿÿÿH½	RMAJORZ
+CODE_SMELL
+Ž
+java:S1192…"YDefine a constant instead of duplicating this literal "redirect:student-control" 3 times.(­ƒ¹ÉûÿÿÿÿH´	RCRITICALZ
+CODE_SMELL
+‰
+java:S1192»"YDefine a constant instead of duplicating this literal "redirect:teacher-control" 3 times.(€í«ÊH­	RCRITICALZ
+CODE_SMELL
+{
+java:S3655¥"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¿–ŒÇþÿÿÿÿHÍ	RMAJORZBUG
+‹
+java:S1192i"WDefine a constant instead of duplicating this literal "redirect:admin-control" 3 times.(Ï“ŸåþÿÿÿÿH¾	RCRITICALZ
+CODE_SMELL
+j	java:S106ë"9Replace this use of System.out or System.err by a logger.(š”Ï—ÿÿÿÿÿHÒ	RMAJORZ
+CODE_SMELL
+v
+java:S3655Ö"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(€ƒ‰×H±	RMAJORZBUG
+ƒ
+java:S1128"RRemove this unused import 'org.springframework.web.bind.annotation.DeleteMapping'.(­ìÎªþÿÿÿÿHÉ	RMINORZ
+CODE_SMELL
+w
+java:S4684U"@Replace this persistent entity with a simple POJO or DTO object.(–³ìƒùÿÿÿÿHÂ	RCRITICALZVULNERABILITY
+x
+java:S4684Ó"@Replace this persistent entity with a simple POJO or DTO object.(†ˆ´ïúÿÿÿÿH¹	RCRITICALZVULNERABILITY
+x
+java:S4684¢"@Replace this persistent entity with a simple POJO or DTO object.(èÚÉ„üÿÿÿÿHÎ	RCRITICALZVULNERABILITY
+{
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(áäÐçúÿÿÿÿH«	RMAJORZBUG
+v
+java:S3655Ã"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÉÍÿ¡HË	RMAJORZBUG
+x
+java:S4684£"@Replace this persistent entity with a simple POJO or DTO object.(™—ØõøÿÿÿÿHÄ	RCRITICALZVULNERABILITY
+€
+java:S1128"ORemove this unused import 'org.springframework.web.bind.annotation.PutMapping'.(›¥÷ˆûÿÿÿÿHÐ	RMINORZ
+CODE_SMELL
+x
+java:S4684ƒ"@Replace this persistent entity with a simple POJO or DTO object.(¸Å´ÀøÿÿÿÿH¼	RCRITICALZVULNERABILITY
+d	java:S106M"9Replace this use of System.out or System.err by a logger.(î–”ØH§	RMAJORZ
+CODE_SMELL
+j	java:S106Õ"9Replace this use of System.out or System.err by a logger.(½Û‡÷úÿÿÿÿHÅ	RMAJORZ
+CODE_SMELL
+e	java:S106¤"9Replace this use of System.out or System.err by a logger.(„ííHÈ	RMAJORZ
+CODE_SMELL
+‚
+java:S1128"ORemove this unused import 'org.springframework.web.bind.annotation.GetMapping'.(‡¡‰Ø8úà©øµ0H¥	RMINORZ
+CODE_SMELL
+j	java:S106‡"9Replace this use of System.out or System.err by a logger.(ÔÔÕ“þÿÿÿÿH¨	RMAJORZ
+CODE_SMELL
+i	java:S106W"9Replace this use of System.out or System.err by a logger.(‚Îç…ùÿÿÿÿHÇ	RMAJORZ
+CODE_SMELL

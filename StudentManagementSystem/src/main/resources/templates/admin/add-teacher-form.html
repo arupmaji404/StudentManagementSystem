@@ -30,7 +30,7 @@
 						</div>
 						<div class="form-group">
 							<label for="exampleInput Password1">Email</label> <input
-								type="email" class="form-control" id="exampleInput Password1"
+								type="text" class="form-control" id="exampleInput Password1"
 								th:classappend="${#fields.hasErrors('email')?'is-invalid':''}"
 								th:field="*{email}" required>
 							<p th:each="e : ${#fields.errors('email')}" th:text="${e}"
@@ -45,24 +45,33 @@
 						<div class="form-group">
 							<label for="exampleInputEmail1">Address</label> <input
 								type="text" class="form-control" id="exampleInputEmail1"
-								aria-describedby="emailHelp" th:field="*{address}" required>
+								th:classappend="${#fields.hasErrors('address')?'is-invalid':''}"
+								aria-describedby="emailHelp" th:field="*{address}" >
+								<p th:each="e : ${#fields.errors('address')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 						<div class="form-group">
 							<label for="exampleInput Password1">Qualification</label> <input
 								type="text" class="form-control" id="exampleInput Password1"
-								th:field="*{qualification}" required>
+								th:classappend="${#fields.hasErrors('qualification')?'is-invalid':''}"
+								th:field="*{qualification}" >
+								<p th:each="e : ${#fields.errors('qualification')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 
 						<div class="form-group">
 							<label for="exampleInputEmail1">Subject</label> <input
 								type="text" class="form-control" id="exampleInputEmail1"
-								aria-describedby="emailHelp" th:field="*{subject}" required>
+								th:classappend="${#fields.hasErrors('subject')?'is-invalid':''}"
+								aria-describedby="emailHelp" th:field="*{subject}" >
+								<p th:each="e : ${#fields.errors('subject')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 						<div class="form-group">
 							<label for="exampleInput Password1">Class</label> <input
 								type="number" min = "4" max = "10" class="form-control" id="exampleInput Password1"
 								th:field="*{herClass}" 	th:classappend="${#fields.hasErrors('herClass')?'is-invalid':''}"
-								 required >
+								 required>
 							<p th:each="e : ${#fields.errors('herClass')}" th:text="${e}"
 								class="invalid-feedback"></p>
 						</div>

@@ -33,7 +33,7 @@ public class TeacherController {
 	private TeacherService teacherService;
 	
 	@RequestMapping("/teacherIndex")
-	public String home()
+	public String home(Model model)
 	{
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String username = "";
@@ -43,6 +43,9 @@ public class TeacherController {
 		  username = principal.toString();
 		}
 		System.out.println(username);
+		int standard = teacherService.getTeacherByEmail(username).getHerClass();
+		model.addAttribute("standard", standard);
+		model.addAttribute("countNoOfStud", studentService.getCountByStandard(standard));
 		return "teacher/teacherHome";
 	}
 	
@@ -88,10 +91,20 @@ public class TeacherController {
 		
 	}
 	@RequestMapping("/addStudentMarks")
-	public String addStudentMarks(@ModelAttribute("marks") MarksModel marks, @RequestParam("email") String email)
+	public String addStudentMarks(@ModelAttribute("marks") MarksModel marks)
 	{
-		System.out.println(marks);
-		System.out.println(email);
+//		System.out.println(marks);
+//		System.out.println(email);
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String username = "";
+		if (principal instanceof UserDetails) {
+		  username = ((UserDetails)principal).getUsername();
+		} else {
+		  username = principal.toString();
+		}
+		TeacherModel teacher = teacherService.getTeacherByEmail(username);
+		int teacher_class = teacher.getHerClass();
+		marks.setStandard(teacher_class);
 		marksService.addMarks(marks);
 		return "redirect:/teacher/upload-marks";
 	}
@@ -119,15 +132,17 @@ public class TeacherController {
 		}
 		TeacherModel teacher = teacherService.getTeacherByEmail(username);
 		int teacher_class = teacher.getHerClass();
-		List<StudentModel> students = studentService.getAllStudentsByStandard(teacher_class);
-		List<MarksModel> allMarks = new ArrayList<MarksModel>();
-		MarksModel temp = null;
-		for (int i = 0; i < students.size(); i++) {
-			 temp = marksService.findMarksByEmail(students.get(i).getEmail());
-			 if(temp != null)
-				 allMarks.add(temp);
-        }
-		System.out.println(allMarks);
+//		List<StudentModel> students = studentService.getAllStudentsByStandard(teacher_class);
+//		List<MarksModel> allMarks = new ArrayList<>();
+//		MarksModel temp = null;
+//		for (int i = 0; i < students.size(); i++) {
+//			 temp = marksService.findMarksByEmail(students.get(i).getEmail());
+//			 if(temp != null)
+//				 allMarks.add(temp);
+//        }
+//		System.out.println(allMarks);
+		
+		List<MarksModel> allMarks = marksService.findMarksByStandard(teacher_class);
 		model.addAttribute("allmarks", allMarks);
 		return "teacher/viewclassmarks";
 	}

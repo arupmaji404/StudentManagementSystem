@@ -19,6 +19,8 @@ public class MarksModel {
 	private int science;
 	private int sst;
 	private int computer;
+	private int standard;
+	
 	public int getId() {
 		return id;
 	}
@@ -61,10 +63,16 @@ public class MarksModel {
 	public void setComputer(int computer) {
 		this.computer = computer;
 	}
+	public int getStandard() {
+		return standard;
+	}
+	public void setStandard(int standard) {
+		this.standard = standard;
+	}
 	@Override
 	public String toString() {
 		return "MarksModel [id=" + id + ", email=" + email + ", english=" + english + ", math=" + math + ", science="
-				+ science + ", sst=" + sst + ", computer=" + computer + "]";
+				+ science + ", sst=" + sst + ", computer=" + computer + ", standard=" + standard + "]";
 	}
 	
 	

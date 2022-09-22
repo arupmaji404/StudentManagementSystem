@@ -17,4 +17,5 @@ public interface StudentService {
 	public List<StudentModel> getAllStudentsByStandard(Integer standard);
 	public StudentModel getStudentByEmail(String email);
 	public long getCount();
+	public int getCountByStandard(int standard);
 }

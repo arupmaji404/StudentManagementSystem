@@ -1,0 +1,63 @@
+
+d	java:S106w"9Replace this use of System.out or System.err by a logger.(Áµ³²HÜ	RMAJORZ
+CODE_SMELL
+|	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡—ËHÛ	RMINORZ
+CODE_SMELL
+r
+java:S1659U"ADeclare "math" and all following declarations on a separate line.(ã¶ÓŞşÿÿÿÿHú	RMINORZ
+CODE_SMELL
+g	java:S125x"<This block of commented-out lines of code should be removed.(öÍôÖHƒ
+RMAJORZ
+CODE_SMELL
+p
+java:S1659Q"EDeclare "max_math" and all following declarations on a separate line.(‰ÙÃsHï	RMINORZ
+CODE_SMELL
+{	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïª¥Hõ	RMINORZ
+CODE_SMELL
+Š
+java:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(çúÍ³üÿÿÿÿHë	RMINORZ
+CODE_SMELL
+s
+java:S1659P"HDeclare "max_english" and all following declarations on a separate line.(ïª¥H×	RMINORZ
+CODE_SMELL
+	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡¬øÿÿÿÿHÔ	RMINORZ
+CODE_SMELL
+	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡¬øÿÿÿÿHÓ	RMINORZ
+CODE_SMELL
+|	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Ù²¼HÖ	RMINORZ
+CODE_SMELL
+|	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡—ËHß	RMINORZ
+CODE_SMELL
+d	java:S106'"9Replace this use of System.out or System.err by a logger.(„ííHô	RMAJORZ
+CODE_SMELL
+l
+java:S1854U";Remove this useless assignment to local variable "english".(ã¶ÓŞşÿÿÿÿHÕ	RMAJORZ
+CODE_SMELL
+p
+java:S1659S"DDeclare "max_sst" and all following declarations on a separate line.(—Ù²¼Há	RMINORZ
+CODE_SMELL
+u
+java:S1659T"IDeclare "max_computer" and all following declarations on a separate line.(¡—ËHç	RMINORZ
+CODE_SMELL
+‚	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïª¥8—¸ò÷µ0Hí	RMINORZ
+CODE_SMELL
+{	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ÙÃsHà	RMINORZ
+CODE_SMELL
+|	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Ù²¼Hİ	RMINORZ
+CODE_SMELL
+{	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ÙÃsHæ	RMINORZ
+CODE_SMELL
+{	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ÙÃsH‚
+RMINORZ
+CODE_SMELL
+	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡¬øÿÿÿÿHå	RMINORZ
+CODE_SMELL
+{	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïª¥HŞ	RMINORZ
+CODE_SMELL
+|	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Ù²¼Hî	RMINORZ
+CODE_SMELL
+|	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡—ËHó	RMINORZ
+CODE_SMELL
+y
+java:S1659R"HDeclare "max_science" and all following declarations on a separate line.(¡¬øÿÿÿÿHö	RMINORZ
+CODE_SMELL

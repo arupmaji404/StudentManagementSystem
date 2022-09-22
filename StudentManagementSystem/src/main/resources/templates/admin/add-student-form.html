@@ -23,54 +23,74 @@
 						<div class="form-group">
 							<label for="exampleInputEmail1">Name</label> <input type="text"
 								class="form-control" id="exampleInputEmail1"
+								th:classappend="${#fields.hasErrors('name')?'is-invalid':''}"								
 								aria-describedby="emailHelp" th:field="*{name}" required>
+								<p th:each="e : ${#fields.errors('name')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 
 						<div class="form-group">
 							<label for="exampleInput Password1">Roll</label> <input
 								type="number" class="form-control" id="exampleInput Password1"
+								th:classappend="${#fields.hasErrors('roll')?'is-invalid':''}"	
 								th:field="*{roll}" required>
+								<p th:each="e : ${#fields.errors('roll')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 
 						<div class="form-group">
 							<label for="exampleInput Password1">Email</label> <input
 								type="email" class="form-control" id="exampleInput Password1"
+								th:classappend="${#fields.hasErrors('email')?'is-invalid':''}"	
 								th:field="*{email}" required>
+								<p th:each="e : ${#fields.errors('email')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 
 
 						<div class="form-group">
 							<label for="exampleInput Password1">Standard</label> <input
 								type="number" class="form-control" id="exampleInput Password1"
+								th:classappend="${#fields.hasErrors('standard')?'is-invalid':''}"	
 								th:field="*{standard}" min="4" max="10" required>
+								<p th:each="e : ${#fields.errors('standard')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 
 						<div class="form-group">
 							<label for="exampleInputEmail1">Address</label> <input
 								type="text" class="form-control" id="exampleInputEmail1"
+								th:classappend="${#fields.hasErrors('address')?'is-invalid':''}"	
 								aria-describedby="emailHelp" th:field="*{address}" required>
+								<p th:each="e : ${#fields.errors('address')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 						<div class="form-group">
 							<label for="exampleInput Password1">Parent</label> <input
 								type="text" class="form-control" id="exampleInput Password1"
+								th:classappend="${#fields.hasErrors('parent')?'is-invalid':''}"	
 								th:field="*{parent}" required>
+								<p th:each="e : ${#fields.errors('parent')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 
 						<div class="form-group">
 							<label for="exampleInputEmail1">Phone</label> <input type="tel"
 								class="form-control" id="exampleInputEmail1"
+								th:classappend="${#fields.hasErrors('phno')?'is-invalid':''}"	
 								aria-describedby="emailHelp" th:field="*{phno}" required>
+								<p th:each="e : ${#fields.errors('phno')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 						<div class="form-group">
-							<!--
-							<label for="exampleInput Password1">Gender</label> <input
-								type="text" class="form-control" id="exampleInput Password1"
-								th:field="*{gender}">
-						 -->
-							<label> Gender </label> <select th:field="*{gender}" required>
+							<label> Gender </label> <select th:field="*{gender}" 
+							th:classappend="${#fields.hasErrors('gender')?'is-invalid':''}"	
+							required>
 								<option th:value="'Male'" th:text="Male">Male</option>
 								<option th:value="'Female'" th:text="Female">Female</option>
 							</select>
+							<p th:each="e : ${#fields.errors('gender')}" th:text="${e}"
+								class="invalid-feedback"></p>
 						</div>
 
 						<div class="form-group">
@@ -83,7 +103,6 @@
 						<div class="text-center">
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</div>
-
 
 					</form>
 				</div>
