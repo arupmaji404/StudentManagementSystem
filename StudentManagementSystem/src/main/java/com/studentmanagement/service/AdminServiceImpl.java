@@ -28,15 +28,9 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public void deleteAdmin(int id) {
-		// TODO Auto-generated method stub
 		adminRepo.deleteById(id);
 		
 	}
-
-//	@Override
-//	public AdminModel getAdmin(String email) {
-//		return adminRepo.
-//	}
 
 	@Override
 	public AdminModel getAdmin(int id) {
@@ -45,7 +39,6 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public long getCount() {
-		// TODO Auto-generated method stub
 		return adminRepo.count();
 	}
 

@@ -31,13 +31,4 @@ public class LoginServiceImpl implements LoginService{
 		
 	}
 	
-	
-
-//	@Override
-//	public void deleteUserByEmail(String email) {
-//		// TODO Auto-generated method stub
-//		loginRepository.deleteByEmail(email);
-//	}
-	
-	
 }

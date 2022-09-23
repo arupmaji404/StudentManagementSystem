@@ -12,7 +12,6 @@ public interface AdminService {
 	public List<AdminModel> getAllAdmins();
 	public AdminModel addAdmin(AdminModel admin);
 	public void deleteAdmin(int id);
-//	public AdminModel getAdmin(String email);
 	public AdminModel getAdmin(int id);
 	public long getCount();
 }

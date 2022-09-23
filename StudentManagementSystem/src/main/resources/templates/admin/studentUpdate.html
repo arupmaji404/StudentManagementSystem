@@ -83,14 +83,6 @@
 								<p th:each="e : ${#fields.errors('phno')}" th:text="${e}"
 								class="invalid-feedback"></p>
 						</div>
-						<!-- <div class="form-group">
-							<label for="exampleInput Password1">Gender</label> <input
-								type="text" class="form-control" id="exampleInput Password1"
-								th:classappend="${#fields.hasErrors('gender')?'is-invalid':''}"
-								name = "gender" th:value="${student.gender}" required>
-								<p th:each="e : ${#fields.errors('gender')}" th:text="${e}"
-								class="invalid-feedback"></p>
-						</div> -->
 						
 						<div class="form-group">
 							<label> Gender </label> <select name = "gender"

@@ -22,7 +22,6 @@ public class LoginController {
 		List<LoginModel> loginModels = loginRepo.findAll();
 		if(loginModels.isEmpty())
 		{
-			System.out.println("Inside 0");
 			LoginModel loginModel = new LoginModel();
 			loginModel.setEmail("admin");
 			String password = "admin";

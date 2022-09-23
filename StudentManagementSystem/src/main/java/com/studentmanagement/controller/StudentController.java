@@ -33,7 +33,7 @@ public class StudentController {
 		}
 		String email = username;
 		StudentModel student = studentService.getStudentByEmail(email);
-		System.out.println(student);
+
 		model.addAttribute("student", student);
 		return "student/studentHome";
 	}

@@ -1,6 +1,5 @@
 package com.studentmanagement.controller;
 
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -46,6 +45,10 @@ public class AdminController {
 
 	@Autowired
 	private MarksServiceImpl marksService;
+	
+	private String redirectAdmin="redirect:admin-control";
+	private String redirectTeacher="redirect:teacher-control";
+	private String redirectStudent="redirect:student-control";
 
 	@GetMapping("/adminIndex")
 	public String adminIndex(Model model) {
@@ -66,7 +69,6 @@ public class AdminController {
 
 	@GetMapping("/addAdminForm")
 	public String addAdminForm(Model model) {
-		System.out.println("Inside add admin form");
 		model.addAttribute("admin", new AdminModel());
 		return "admin/add-admin-form";
 	}
@@ -78,9 +80,6 @@ public class AdminController {
 		{
 			return "admin/add-admin-form";
 		}
-		System.out.println(admin);
-		System.out.println(pass);
-		System.out.println("Inside add admin");
 		LoginModel loginModel = new LoginModel();
 		loginModel.setEmail(admin.getEmail());
 		loginModel.setPassword(new BCryptPasswordEncoder().encode(pass));
@@ -92,8 +91,7 @@ public class AdminController {
 		adminModel.setName(admin.getName());
 		adminModel.setEmail(admin.getEmail());
 		adminService.addAdmin(adminModel);
-
-		return "redirect:admin-control";
+		return redirectAdmin;
 	}
 
 	@GetMapping("/deleteAdmin")
@@ -102,7 +100,7 @@ public class AdminController {
 		adminService.deleteAdmin(id);
 		LoginModel lm = loginService.findByEmail(admin.getEmail()).get();
 		loginService.deleteUser(lm);
-		return "redirect:admin-control";
+		return redirectAdmin;
 	}
 
 	// update admin
@@ -120,13 +118,11 @@ public class AdminController {
 		{
 			return "admin/adminUpdate";
 		}
-		System.out.println(admin);
 		LoginModel login = loginService.findByEmail((adminService.getAdmin(admin.getId())).getEmail()).get();
-		System.out.println(login);
 		login.setEmail(admin.getEmail());
 		adminService.addAdmin(admin);
 		loginService.addUser(login);
-		return "redirect:admin-control";
+		return redirectAdmin;
 	}
 
 	// Handling the teacher control
@@ -140,7 +136,6 @@ public class AdminController {
 
 	@GetMapping("/addTeacherForm")
 	public String addTeacherForm(Model model) {
-		System.out.println("Inside add teacher form");
 		model.addAttribute("teacher", new TeacherModel());
 		return "admin/add-teacher-form";
 	}
@@ -149,8 +144,7 @@ public class AdminController {
 	public String addTeacher(@Valid @ModelAttribute("teacher") TeacherModel teacher, BindingResult result,
 			@RequestParam("password") String pass) {
 		if (result.hasErrors()) {
-			System.out.println(result);
-			System.out.println("Error occured");
+
 			return "admin/add-teacher-form";
 		}
 		LoginModel loginModel = new LoginModel();
@@ -169,7 +163,7 @@ public class AdminController {
 		teacherModel.setHerClass(teacher.getHerClass());
 		teacherService.addTeacher(teacherModel);
 
-		return "redirect:teacher-control";
+		return redirectTeacher;
 	}
 
 	@GetMapping("/deleteTeacher")
@@ -178,7 +172,7 @@ public class AdminController {
 		teacherService.deleteTeacher(id);
 		LoginModel lm = loginService.findByEmail(teacher.getEmail()).get();
 		loginService.deleteUser(lm);
-		return "redirect:teacher-control";
+		return redirectTeacher;
 	}
 
 	// update teacher
@@ -193,17 +187,14 @@ public class AdminController {
 	@PostMapping("/editTeacher")
 	public String editTeacher(@Valid @ModelAttribute("teacher") TeacherModel teacher,  BindingResult result) {
 		if (result.hasErrors()) {
-			System.out.println(result);
-			System.out.println("Error occured");
 			return "admin/teacherUpdate";
 		}
-		System.out.println(teacher);
+
 		LoginModel login = loginService.findByEmail((teacherService.getTeacher(teacher.getId())).getEmail()).get();
-		System.out.println(login);
 		login.setEmail(teacher.getEmail());
 		teacherService.addTeacher(teacher);
 		loginService.addUser(login);
-		return "redirect:teacher-control";
+		return redirectTeacher;
 	}
 
 	// Handling the student control
@@ -216,7 +207,6 @@ public class AdminController {
 
 	@RequestMapping("/addStudentForm")
 	public String addStudentForm(Model model) {
-		System.out.println("Inside add student form");
 		model.addAttribute("student", new StudentModel());
 		return "admin/add-student-form";
 	}
@@ -236,7 +226,7 @@ public class AdminController {
 
 		studentService.addStudent(student);
 
-		return "redirect:student-control";
+		return redirectStudent;
 	}
 
 	@RequestMapping("/deleteStudent")
@@ -250,7 +240,7 @@ public class AdminController {
 			marksService.deleteMarks(mm);
 		}
 
-		return "redirect:student-control";
+		return redirectStudent;
 	}
 
 	// update student
@@ -268,9 +258,7 @@ public class AdminController {
 		{
 			return "admin/studentUpdate";
 		}
-		System.out.println(student);
 		LoginModel login = loginService.findByEmail((studentService.getStudent(student.getId())).getEmail()).get();
-		System.out.println(login);
 		login.setEmail(student.getEmail());
 		MarksModel marksModel = marksService.findMarksByEmail((studentService.getStudent(student.getId())).getEmail());
 		if (marksModel != null) {
@@ -282,7 +270,7 @@ public class AdminController {
 		}
 		studentService.addStudent(student);
 		loginService.addUser(login);
-		return "redirect:student-control";
+		return redirectStudent;
 	}
 	
 	@ExceptionHandler(Exception.class)

@@ -11,7 +11,6 @@ public interface TeacherService {
 	public List<TeacherModel> getAllTeachers();
 	public TeacherModel addTeacher(TeacherModel teacher);
 	public void deleteTeacher(int id);
-//	public AdminModel getAdmin(String email);
 	public TeacherModel getTeacher(int id);
 	public TeacherModel getTeacherByEmail(String email);
 	public long getCount();

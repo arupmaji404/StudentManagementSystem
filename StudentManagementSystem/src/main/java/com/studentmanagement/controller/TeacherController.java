@@ -1,6 +1,5 @@
 package com.studentmanagement.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +41,6 @@ public class TeacherController {
 		} else {
 		  username = principal.toString();
 		}
-		System.out.println(username);
 		int standard = teacherService.getTeacherByEmail(username).getHerClass();
 		model.addAttribute("standard", standard);
 		model.addAttribute("countNoOfStud", studentService.getCountByStandard(standard));
@@ -61,8 +59,8 @@ public class TeacherController {
 		  username = principal.toString();
 		}
 		TeacherModel teacher = teacherService.getTeacherByEmail(username);
-		int teacher_class = teacher.getHerClass();
-		List<StudentModel> students = studentService.getAllStudentsByStandard(teacher_class);
+		int teacherClass = teacher.getHerClass();
+		List<StudentModel> students = studentService.getAllStudentsByStandard(teacherClass);
 		model.addAttribute("students", students);
 		return "teacher/upload-marks";
 	}
@@ -70,13 +68,9 @@ public class TeacherController {
 	@RequestMapping("/giveStudentMarks")
 	public String giveMarks(@RequestParam int studentId, @RequestParam String studentEmail, Model model)
 	{
-//		System.out.println(studentId + " " +  studentEmail);
-//		System.out.println("inside give student marks");
 		MarksModel marks = marksService.findMarksByEmail(studentEmail);
-//		System.out.println("Marks" + marks);
 		if(marks == null)
 		{
-			System.out.println("inside add marks");
 			model.addAttribute("marks", new MarksModel());
 			model.addAttribute("studentEmail", studentEmail);
 			
@@ -84,7 +78,6 @@ public class TeacherController {
 		}
 		else
 		{
-			System.out.println("inside update marks");
 			model.addAttribute("marks", marks);
 			return "teacher/update-marks";
 		}
@@ -93,8 +86,6 @@ public class TeacherController {
 	@RequestMapping("/addStudentMarks")
 	public String addStudentMarks(@ModelAttribute("marks") MarksModel marks)
 	{
-//		System.out.println(marks);
-//		System.out.println(email);
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String username = "";
 		if (principal instanceof UserDetails) {
@@ -103,8 +94,8 @@ public class TeacherController {
 		  username = principal.toString();
 		}
 		TeacherModel teacher = teacherService.getTeacherByEmail(username);
-		int teacher_class = teacher.getHerClass();
-		marks.setStandard(teacher_class);
+		int teacherClass = teacher.getHerClass();
+		marks.setStandard(teacherClass);
 		marksService.addMarks(marks);
 		return "redirect:/teacher/upload-marks";
 	}
@@ -112,9 +103,6 @@ public class TeacherController {
 	@RequestMapping("/updateMarks")
 	public String updateStudentMarks(@ModelAttribute("marks") MarksModel marks)
 	{
-		System.out.println(marks);
-		System.out.println("Yoooo");
-//		System.out.println(email);
 		marksService.addMarks(marks);
 		return "redirect:/teacher/upload-marks";
 	}
@@ -131,18 +119,9 @@ public class TeacherController {
 		  username = principal.toString();
 		}
 		TeacherModel teacher = teacherService.getTeacherByEmail(username);
-		int teacher_class = teacher.getHerClass();
-//		List<StudentModel> students = studentService.getAllStudentsByStandard(teacher_class);
-//		List<MarksModel> allMarks = new ArrayList<>();
-//		MarksModel temp = null;
-//		for (int i = 0; i < students.size(); i++) {
-//			 temp = marksService.findMarksByEmail(students.get(i).getEmail());
-//			 if(temp != null)
-//				 allMarks.add(temp);
-//        }
-//		System.out.println(allMarks);
+		int teacherClass = teacher.getHerClass();
 		
-		List<MarksModel> allMarks = marksService.findMarksByStandard(teacher_class);
+		List<MarksModel> allMarks = marksService.findMarksByStandard(teacherClass);
 		model.addAttribute("allmarks", allMarks);
 		return "teacher/viewclassmarks";
 	}
